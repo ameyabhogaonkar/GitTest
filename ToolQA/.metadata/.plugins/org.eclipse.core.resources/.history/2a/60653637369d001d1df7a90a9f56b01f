@@ -1,0 +1,21 @@
+package toolQA;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Browserwindow {
+
+	public static void main(String[] args) {
+		
+		System.setProperty("webdriver.chrome.driver", "\\src\\test\\resources\\driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		driver.get("https://demoqa.com/browser-windows");
+		System.out.println("home");
+
+	}
+
+}

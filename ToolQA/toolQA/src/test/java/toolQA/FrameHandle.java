@@ -1,0 +1,31 @@
+package toolQA;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.netty.channel.pool.FixedChannelPool.AcquireTimeoutAction;
+
+public class FrameHandle {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver;
+		System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chrome driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
+		driver.get("https://demoqa.com/frames");
+		//driver.switchTo().frame("//*[@id=\"a077aa5e\"]");
+		//System.out.println("done");
+		int size = driver.findElements(By.tagName("iframe")).size();
+	    System.out.println("Total Frames --" + size);
+	    System.out.println(driver.switchTo().frame(0));
+		
+
+	}
+
+}
